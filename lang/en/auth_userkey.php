@@ -54,3 +54,6 @@ $string['redirecterrordetected'] = 'Unsupported redirect to {$a} detected, execu
 $string['noip'] = 'Unable to fetch IP address of client.';
 $string['privacy:metadata'] = 'User key authentication plugin does not store any personal data.';
 $string['incorrectlogout'] = 'Incorrect logout request';
+$string['blockadminlogin'] = 'Block administrator login';
+$string['blockadminlogin_desc'] = '[Security] If enabled, users with administrator privileges will not be able to log in using User Key.';
+

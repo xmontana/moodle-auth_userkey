@@ -169,6 +169,11 @@ class auth_plugin_userkey extends auth_plugin_base {
             }
         }
 
+        // Check if the option to block admins is activated and the user is admin.
+        if (get_config('auth_userkey', 'blockadminlogin') && is_siteadmin($key->userid)) {
+            throw new moodle_exception('adminlogindenied', 'error', '', null, 'Password access is not permitted for administrators.');
+        }
+
         $this->userkeymanager->delete_keys($key->userid);
 
         $user = get_complete_user_data('id', $key->userid);

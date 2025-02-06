@@ -60,6 +60,12 @@ if ($ADMIN->fulltree) {
             new lang_string('updateuser', 'auth_userkey'),
             new lang_string('updateuser_desc', 'auth_userkey'), 0, $yesno));
 
+    // New option to block administrator login.
+    $settings->add(new admin_setting_configcheckbox('auth_userkey/blockadminlogin',
+            new lang_string('blockadminlogin', 'auth_userkey'),
+            new lang_string('blockadminlogin_desc', 'auth_userkey'),
+            0)); // 0 means that the default value is ‘disabled’.
+
     // Display locking / mapping of profile fields.
     $authplugin = get_auth_plugin('userkey');
     display_auth_lock_options($settings, $authplugin->authtype,
